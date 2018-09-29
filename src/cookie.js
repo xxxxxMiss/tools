@@ -41,7 +41,7 @@ export default class Cookie {
     })
   }
 
-  length() {
+  get length() {
     return parseCookie().size
   }
 

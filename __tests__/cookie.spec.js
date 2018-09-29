@@ -70,12 +70,12 @@ describe('getItem(key)', () => {
       name: 'jest',
       age: 10
     })
-    expect(newInst.length()).toBe(document.cookie.split(/;\s*/).length)
+    expect(newInst.length).toBe(document.cookie.split(/;\s*/).length)
   })
 })
 
-test('length(): get the size of cookies', () => {
-  expect(inst.length()).toBe(document.cookie.split(/;\s*/).length)
+test('length: get the size of cookies', () => {
+  expect(inst.length).toBe(document.cookie.split(/;\s*/).length)
 })
 
 test('key(index): get the key with the specified index', () => {
@@ -84,5 +84,5 @@ test('key(index): get the key with the specified index', () => {
 
 toString('clear(): remove all cookies with default config', () => {
   inst.clear()
-  expect(inst.length()).toBe(1)
+  expect(inst.length).toBe(1)
 })

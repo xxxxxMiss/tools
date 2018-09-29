@@ -63,34 +63,36 @@ describe('parseTimeStr(str)', () => {
 
   test('days/day/d', () => {
     const date1 = parseTimeStr('1d')
-    expect(date1.getDate()).toBe(d.getDate() + 1)
+    d.setDate(1)
+    expect(date1.getDate()).toBe(d.getDate())
 
     const date2 = parseTimeStr('2days')
-    expect(date2.getDate()).toBe(d.getDate() + 2)
+    d.setDate(2)
+    expect(date2.getDate()).toBe(d.getDate())
   })
 
   test('hours/hrs/hr/h', () => {
     const date1 = parseTimeStr('1h')
-    expect(date1.getHours()).toBe(d.getHours() + 1)
+    expect([0, d.getHours() + 1]).toContain(date1.getHours())
 
     const date2 = parseTimeStr('2hours')
-    expect(date2.getHours()).toBe(d.getHours() + 2)
+    expect([0, d.getHours() + 2]).toContain(date2.getHours())
   })
 
   test('minutes/minute/mins/min/m', () => {
     const date1 = parseTimeStr('1m')
-    expect(date1.getMinutes()).toBe(d.getMinutes() + 1)
+    expect([0, d.getMinutes() + 1]).toContain(date1.getMinutes())
 
     const date2 = parseTimeStr('2mins')
-    expect(date2.getMinutes()).toBe(d.getMinutes() + 2)
+    expect([0, d.getMinutes() + 2]).toContain(date2.getMinutes())
   })
 
   test('seconds/second/secs/sec/s', () => {
     const date1 = parseTimeStr('1s')
-    expect(date1.getSeconds()).toBe(d.getSeconds() + 1)
+    expect([0, d.getSeconds() + 1]).toContain(date1.getSeconds())
 
     const date2 = parseTimeStr('2s')
-    expect(date2.getSeconds()).toBe(d.getSeconds() + 2)
+    expect([0, d.getSeconds() + 2]).toContain(date2.getSeconds())
   })
 
   test('milliseconds/millsecond/msecs/msec/ms', () => {

@@ -29,7 +29,7 @@ export default class Storage {
     return this.storage.clear()
   }
 
-  length() {
+  get length() {
     return this.storage.length
   }
 

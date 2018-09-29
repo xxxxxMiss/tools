@@ -122,9 +122,9 @@ storage.clear()
 storage.index(0)
 ```
 
-### length()
+### length
 > like the length property of `localStorage`.
 
 ```js
-storage.length()
+storage.length
 ```

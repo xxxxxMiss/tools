@@ -78,8 +78,8 @@ test('get correct value when persisted data is `Function`, `Date`, `RegExp`', ()
   expect(mock).toHaveBeenCalled()
 })
 
-test('call length method', () => {
-  expect(inst.length()).toBe(window.localStorage.length)
+test('get length', () => {
+  expect(inst.length).toBe(window.localStorage.length)
 })
 
 test('call key method with a index param', () => {
@@ -95,13 +95,13 @@ test('call removeItem method with a key param', () => {
 
 test('call removeItem method without param', () => {
   inst.removeItem()
-  expect(inst.length()).toBe(0)
+  expect(inst.length).toBe(0)
 })
 
 test('call clear method', () => {
   inst.setItem('name', 'jest')
-  expect(inst.length()).toBe(1)
+  expect(inst.length).toBe(1)
 
   inst.clear()
-  expect(inst.length()).toBe(0)
+  expect(inst.length).toBe(0)
 })
