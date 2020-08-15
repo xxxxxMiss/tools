@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <link rel="stylesheet" href="./www/iconfont.css" />
+  </head>
+  <style>
+    /**{
+    padding: 0;
+    margin: 0;
+  }*/
+    .modal-backdrop {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      min-width: 150px;
+      max-width: 300px;
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(186, 204, 207, 0.7);
+      margin: 30px auto;
+      background-color: #fff;
+    }
+    .header {
+      height: 44px;
+      line-height: 44px;
+      font-size: 16px;
+      text-align: center;
+      border: 1px solid red;
+    }
+    .content {
+      min-height: 200px;
+      max-height: 400px;
+      padding: 10px 15px;
+      border: 1px solid blue;
+    }
+    .footer {
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid #ff8200;
+    }
+    #showModal {
+      margin: 0;
+      padding: 0 15px;
+      border: 1px solid #00c1de;
+      border-radius: 4px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      outline: none;
+      background-color: #00c1de;
+      color: #fff;
+      cursor: pointer;
+    }
+    .icon {
+      display: inline;
+      padding: 10px;
+      color: blue;
+    }
+    .xcontainer {
+      position: fixed;
+      left: 50px;
+      top: 100px;
+      border: 1px solid red;
+    }
+    .xsub {
+      position: fixed;
+      left: 10px;
+      top: 20px;
+    }
+    .test {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      border: 5px solid red;
+      border-top-width: 6px;
+    }
+  </style>
+  <body>
+    <p>测试元素</p>
+    <span class="test">测试元素</span>
+    <div><i class="icon icon-logout"></i></div>
+    <div><i class="icon icon-setting"></i></div>
+    <div><i class="icon icon-message"></i></div>
+    <div><i class="icon icon-people"></i></div>
+    <div><i class="icon icon-notify"></i></div>
+
+    <!-- <div id="modal-backdrop" class="modal-backdrop">
+    <div class="container" id="modal_container">
+      <header class="header">
+        <h3>头</h3>
+      </header>
+      <div class="content">
+        <p>内容部分</p>
+      </div>
+      <footer class="footer">
+        <p>尾部</p>
+      </footer>
+    </div>
+  </div> -->
+    <div class="container" id="modal_container">
+      <header class="header"><h3>头</h3></header>
+      <div class="content"><p>内容部分</p></div>
+      <footer class="footer"><p>尾部</p></footer>
+    </div>
+    <button id="showModal">显示Modal</button>
+    <div class="xcontainer"><div class="xsub"></div></div>
+    <script>
+      /*document.body.addEventListener('click', function(e){
+      var container = document.getElementById('modal_container')
+      var button = document.getElementById('showModal')
+      var contains = isContains(e, container)
+      var containButton = isContains(e, button)
+
+
+      if ( contains || containButton ) return
+      container.style.display = 'none'
+    })
+
+
+    function isContains(e, el){
+      var target = e.target
+      if ( target === el ) return true
+
+      var parent = target.parentElement
+      while(parent){
+        if (parent === el) return true
+        parent = parent.parentElement
+      }
+      return false
+    }*/
+
+      /*document.body.addEventListener('click', function(){
+      document.getElementById('modal_container').style.display = 'none'
+    })
+
+    document.getElementById('modal_container').addEventListener('click', function(e){
+      e.stopPropagation()
+    })*/
+
+      var modalContainer = document.getElementById('modal_container'),
+        rect = modalContainer.getBoundingClientRect(),
+        scrollLeft =
+          document.body.scrollLeft + document.documentElement.scrollLeft,
+        scrollTop =
+          document.body.scrollTop + document.documentElement.scrollTop,
+        left = rect.left + scrollLeft,
+        tops = rect.top + scrollTop,
+        right = rect.right + scrollLeft,
+        bottom = rect.bottom + scrollTop
+
+      console.log(scrollTop)
+      document.body.addEventListener('click', function(e) {
+        console.log(`left: ${left}`)
+        console.log(`top: ${tops}`)
+        console.log(`right: ${right}`)
+        console.log(`bottom: ${bottom}`)
+        var pageX = e.pageX,
+          pageY = e.pageY
+
+        if (pageX > left && pageX < right && pageY > tops && pageY < bottom) {
+          // this.style.display = 'none'
+        } else {
+          modalContainer.style.display = 'none'
+        }
+
+        console.log(`pageX: ${pageX}, pageY: ${pageY}`)
+      })
+
+      document
+        .getElementById('showModal')
+        .addEventListener('click', function() {
+          document.getElementById('modal_container').style.display = 'block'
+        })
+    </script>
+  </body>
+</html>

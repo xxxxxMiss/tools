@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>RxJS</title>
+  <link rel="stylesheet" href="">
+  <style type="text/css" media="screen">
+    .test{
+      transition: opacity 2s, width 3s;
+      opacity: 0;
+      width: 50px;
+      height: 100px;
+      background-color: #ff8200;
+    }
+    .show{
+      opacity: 1;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div>尽快尽快</div>
+  <button id="btn">点击按钮</button>
+  <a href="#" title="" id="J_test">JJJKKK</a>
+  <input id="in" type="text" name="" value="">
+  <div id="J_xx" class="test"></div>
+
+  <script>
+    var target = document.getElementById('J_xx')
+
+    document.getElementById('J_test').addEventListener('click', function(){
+      target.classList.toggle('show')
+    })
+
+    target.addEventListener('transitionend', function(){
+      console.log('end')
+    })
+  </script>
+
+
+  <script>
+  function Dog(name, age){
+    this.name = name
+    this.age = age
+    this.bark = function(){
+      console.log('wan wan')
+    }
+  }
+  // console.log(new Dog().constructor.prototype === Dog.prototype)
+  // console.log(new Dog().__proto__ === Dog.prototype)
+
+  var str = new Boolean(true)
+  // console.log(typeof Boolean(str))
+
+
+  var reg = /abc/g
+  console.log(!!'abcdefghi'.match(reg))
+  console.log(!!'abcdefghi'.match(reg))
+  console.log(reg.test('abcdefghi'))
+  console.log(reg.test('abcdefghi'))
+  </script>
+</body>
+</html>

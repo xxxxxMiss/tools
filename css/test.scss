@@ -1,0 +1,30 @@
+.test{
+  background: red;
+}
+
+.test{
+  color: green;
+}
+
+.detail .subclass{
+  color: pink;
+}
+
+.list > .list-item{
+  font-size: 20px;
+  color: red;
+  text-align: center;
+}
+:local(.name){
+  color: #999;
+}
+.name:after{
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+:global(.name){
+  color: #999;
+}
+
