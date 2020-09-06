@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  font-size: 14px;
+}
+.app .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app .header .right {
+  margin-left: 20px;
+  text-align: right;
+}
+.app .header .title {
+  font-size: 9pt;
+  font-weight: 700;
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.app .header .title img {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.app .header .desc {
+  font-size: 8pt;
+  color: #999;
+}
+
+.app .btn-divide {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 8px 18px;
+  text-align: center;
+  position: relative;
+  background-color: #09ed46;
+  color: #fff;
+  font-size: 10pt;
+  margin: 0 10px 30px;
+}
+
+.app .btn-divide::before,
+.app .btn-divide::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  height: 2px;
+  background-color: #09ed46;
+}
+
+.app .btn-divide::before {
+  left: -200px;
+  width: 200px;
+}
+.app .btn-divide::after {
+  right: -800px;
+  width: 800px;
+}
+
+.app .list {
+  margin: 0;
+  padding: 0 10px 20px 25px;
+  list-style: none;
+  border-bottom: 1px solid #09ed46;
+}
+.app .list .item {
+  padding: 0 20px 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.app .list .item .link {
+  font-size: 12px;
+  text-decoration: none;
+  position: relative;
+  top: 3px;
+  color: #999;
+  margin-left: 3px;
+}
+
+.app .list .item .link::before {
+  content: '*';
+  position: relative;
+  top: -3px;
+}
+
+.app .list .label {
+  display: inline-block;
+  min-width: 100px;
+  padding-right: 20px;
+  color: #09ed46;
+}
+.app .list .text {
+  color: #999;
+}
+.app .list .snapshot-container {
+  line-height: 0;
+}
+.app .list .snapshot-container .snapshot {
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+}
+.app .footer {
+  padding: 10px 10px 40px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}

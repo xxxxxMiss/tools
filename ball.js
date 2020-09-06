@@ -1,7 +1,7 @@
-class Ball{
-  constructor(radius, color){
+class Ball {
+  constructor(radius, color) {
     radius = radius || 40
-    color = color || "#ff0000"
+    color = color || '#ff0000'
 
     this.x = 0
     this.y = 0
@@ -17,8 +17,8 @@ class Ball{
     this.lineWidth = 1
   }
 
-  draw(context){
-    context.save()
+  draw(context) {
+    //context.save()
     context.translate(this.x, this.y)
     context.rotate(this.rotation)
     context.scale(this.scaleX, this.scaleY)
@@ -28,20 +28,23 @@ class Ball{
     context.arc(0, 0, this.radius, 0, Math.PI * 2, true)
     context.closePath()
     context.fill()
+    //context.fill()
 
     if (this.lineWidth > 0) {
       context.stroke()
     }
 
     context.restore()
+
+    return "hello world";
   }
 
-  getBounds(){
+  getBounds() {
     return {
-        x: this.x - this.radius,
-        y: this.y - this.radius,
-        width: this.radius * 2,
-        height: this.radius * 2
+      x: this.x - this.radius,
+      y: this.y - this.radius,
+      width: this.radius * 2,
+      height: this.radius * 2,
     }
   }
 }
