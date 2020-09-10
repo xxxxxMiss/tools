@@ -35,8 +35,6 @@ class Ball {
     }
 
     context.restore()
-
-    return "hello world";
   }
 
   getBounds() {

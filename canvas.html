@@ -31,11 +31,9 @@
 
     ball1.mass = 1
     ball1.x = 300
-    ball1.y = canvas.height / 2
     ball1.vx = -10
 
     ;(function drawFrame() {
-      window.requestAnimationFrame(drawFrame)
       context.clearRect(0, 0, canvas.width, canvas.height)
       
       ball0.x += ball0.vx
