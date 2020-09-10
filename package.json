@@ -31,8 +31,6 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "node git-hooks-commitmsg.js",
-      "pre-commit": "node git-hooks-precommitmsg.js"
     }
   },
   "author": "qsch",
